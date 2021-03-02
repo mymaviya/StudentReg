@@ -13,6 +13,8 @@ Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
 Vue.component('pagination', require('laravel-vue-pagination'));
 
+import Gate from "./Gate";
+Vue.prototype.$gate = new Gate(window.user);
 
 import onlyInt from 'vue-input-only-number';
 
@@ -36,6 +38,8 @@ const routes = [
 
     { path: '/dashboard', component: require('./components/Dashboard.vue').default },
     { path: '/home', component: require('./components/Dashboard.vue').default },
+    { path: '/users', component: require('./components/School.vue').default },
+    { path: '/employees', component: require('./components/Employee.vue').default },
     { path: '/NewRegistration', component: require('./components/NewReg.vue').default },
     { path: '*', component: require('./components/NotFound.vue').default }
 ]
@@ -45,7 +49,7 @@ const router = new VueRouter({
     routes // short for `routes: routes`
   })
 
-Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
+Vue.prototype.$schoolID = document.querySelector("meta[name='school-id']").getAttribute('content');
 
 
 var converter = require('number-to-words');

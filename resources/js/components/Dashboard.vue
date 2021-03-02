@@ -60,7 +60,7 @@ import { round } from 'mathjs'
                 cities:{},
                 form: new Form({
                     id:'',
-                    user_id:this.$userId,
+                    user_id:this.$schoolID,
                     fname : '',
                     mname : '',
                     lname : '',
@@ -85,11 +85,11 @@ import { round } from 'mathjs'
             Fire.$on('LoadData',()=>{
                     this.fetchData();
                 })
-            console.log(this.$userId)
+            console.log(this.$schoolID)
         },
         methods:{
             fetchData(){
-                axios.get("api/regstudent/"+this.$userId).then(({data}) => (this.wards = data));
+                axios.get("api/regstudent/"+this.$schoolID).then(({data}) => (this.wards = data));
 
             },
 

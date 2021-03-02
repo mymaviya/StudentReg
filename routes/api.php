@@ -6,6 +6,9 @@ use App\Http\Controllers\API\StateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\StudentController;
+use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\EmployeeController;
+  
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +30,8 @@ Route::apiResources([
     'state' => StateController::class,
     'city' => CityController::class,
     'classes' => ClassController::class,
-    'regstudent' => StudentController::class,
+    'regstudent' => UserController::class,
+    'employee' => EmployeeController::class,
 
 ]);
 
